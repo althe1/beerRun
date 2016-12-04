@@ -261,13 +261,12 @@ Play.prototype = {
   damageLife: function(){
     this.lives.children.pop();
   },
-  bunnyDamageDude: function(player, bunnies) {
-    if(player.body.touching.right) {
-      bunnies.body.x += -8;
+  bunnyDamageDude: function(player, bunny) {
+    if(player.body.touching.right && !player.body.touching.down) {
       this.damageLife();
     }
-    else if(player.body.touching.down && bunnies.body.touching.up) {
-      bunnies.animations.play('boom', 3, false, true);
+    else if(player.body.touching.down && bunny.body.touching.up) {
+      bunny.animations.play('boom', true);
       this.game.sound.play('explode', 1, 0, false, false);
       this.changeDeadChecker(this.player, 'alive');
     }
@@ -275,7 +274,7 @@ Play.prototype = {
 
   copDamageDude: function(player, cops) {
     if(player.body.touching.right) {
-      cops.body.x += -8;
+      cops.body.x += -10;
       this.damageLife();
     }
   },  

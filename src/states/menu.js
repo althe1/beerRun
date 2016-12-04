@@ -1,4 +1,3 @@
-
 'use strict';
 function Menu() {}
 //creates the starting/title page of the game
