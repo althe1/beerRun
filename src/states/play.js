@@ -262,7 +262,8 @@ Play.prototype = {
     this.lives.children.pop();
   },
   bunnyDamageDude: function(player, bunny) {
-    if(player.body.touching.right && !player.body.touching.down) {
+    if(player.body.touching.right && bunny.body.touching.left) {
+      bunny.body.x += -10;
       this.damageLife();
     }
     else if(player.body.touching.down && bunny.body.touching.up) {
@@ -274,7 +275,7 @@ Play.prototype = {
 
   copDamageDude: function(player, cops) {
     if(player.body.touching.right) {
-      cops.body.x += -10;
+      cops.body.x += -15;
       this.damageLife();
     }
   },  
