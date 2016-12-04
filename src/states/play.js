@@ -179,8 +179,8 @@ Play.prototype = {
     this.game.physics.arcade.overlap(this.player, this.whiskeys, this.collectWhiskey, null, this);
 
     //lets player dies when cops and bunnies touch him
-    this.game.physics.arcade.overlap(this.player, this.bunnies, this.bunnyDamageDude, this.returnFalse, this);
-    this.game.physics.arcade.overlap(this.player, this.cops, this.copDamageDude, this.returnFalse, this);
+    this.game.physics.arcade.collide(this.player, this.bunnies, this.bunnyDamageDude, this.returnFalse, this);
+    this.game.physics.arcade.collide(this.player, this.cops, this.copDamageDude, this.returnFalse, this);
   },
   //generates grounds with random y-value(height)
   generateGrounds: function() {  
@@ -263,7 +263,8 @@ Play.prototype = {
   },
   bunnyDamageDude: function(player, bunny) {
     if(player.body.touching.right && bunny.body.touching.left) {
-      bunny.body.x += -10;
+      bunny.body.velocity.x = -50;
+      player.body.x += 10;
       this.damageLife();
     }
     else if(player.body.touching.down && bunny.body.touching.up) {
@@ -272,10 +273,11 @@ Play.prototype = {
       this.changeDeadChecker(this.player, 'alive');
     }
   },
-
   copDamageDude: function(player, cops) {
     if(player.body.touching.right) {
-      cops.body.x += -15;
+      cops.body.velocity.x = -50;
+      player.body.x += 10;
+      cops.body.x += -10;
       this.damageLife();
     }
   },  
