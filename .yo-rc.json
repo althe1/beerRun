@@ -1,0 +1,7 @@
+{
+  "generator-phaser": {
+    "projectName": "beerRun",
+    "esVersion": 5,
+    "gameFolder": "boilerplate"
+  }
+}
