@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "express":     "node server.js",
     "start":       "budo src/main.js:bundle.js --live",
     "prebuild":    "mkdirp build",
     "build":       "npm run build:js && npm run build:css && npm run build:html && npm run copy:all",
@@ -17,11 +18,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
     "phaser": "^2.6.2"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
     "budo": "^8.0.4",
+    "express": "^4.14.0",
     "clean-css": "^3.4.9",
     "htmlprocessor": "^0.2.3",
     "mkdirp": "^0.5.1",
