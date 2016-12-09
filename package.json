@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "express":     "node server.js",
-    "start":       "budo src/main.js:bundle.js --live",
+    "start":       "node server.js",
+    "local-serve": "budo src/main.js:bundle.js --live",
     "prebuild":    "mkdirp build",
     "build":       "npm run build:js && npm run build:css && npm run build:html && npm run copy:all",
     "build:js":    "browserify src/main.js | uglifyjs -cm > build/bundle.min.js",
