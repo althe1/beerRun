@@ -1,4 +1,5 @@
 var express = require('express');
+var port = process.env.PORT || 3000;
 var app = express();
 // var path = require("path");
 
@@ -9,6 +10,6 @@ app.get('/', function(req,res) {
 	res.sendFile('index.html');
 });
 
-app.listen(3000);
-
-console.log("Running at Port 3000");
+app.listen(port, function() {
+	console.log('Beer Run listening on localhost:'+port);
+});
