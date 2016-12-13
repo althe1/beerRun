@@ -8,8 +8,8 @@
 2. Npm Install:
 <pre><code>npm install</code></pre>
 
-3. Npm Start:
-<pre><code>npm start</code></pre>
+3. Run Node:
+<pre><code>node server.js</code></pre>
 
 ###Created By:
 
