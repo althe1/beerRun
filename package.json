@@ -2,17 +2,12 @@
   "name": "beerRun",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=4.5.0",
+    "npm": "^3.0.0"
+  },
   "scripts": {
-    "start":       "node server.js",
-    "local-serve": "budo src/main.js:bundle.js --live",
-    "prebuild":    "mkdirp build",
-    "build":       "npm run build:js && npm run build:css && npm run build:html && npm run copy:all",
-    "build:js":    "browserify src/main.js | uglifyjs -cm > build/bundle.min.js",
-    "build:css":   "cleancss css/main.css -o build/main.min.css",
-    "build:html":  "htmlprocessor index.html -o build/index.html",
-    "copy:all":    "npm run copy:assets && npm run copy:phaser",
-    "copy:assets": "ncp assets build/",
-    "copy:phaser": "ncp node_modules/phaser/build/phaser.min.js build/phaser.min.js"
+    "start":       "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +18,6 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
-    "budo": "^8.0.4",
     "express": "^4.14.0",
     "clean-css": "^3.4.9",
     "htmlprocessor": "^0.2.3",
