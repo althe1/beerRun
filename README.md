@@ -1,4 +1,7 @@
-<img src="assets/banner.png"></a>
++ [https://beer-run.herokuapp.com/](https://beer-run.herokuapp.com/)
+
+
+<img src="assets/banner.png">
 
 ##How to play Beer Run locally
 
