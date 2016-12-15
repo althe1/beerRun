@@ -12,7 +12,7 @@
 3. Npm Build:
 <pre><code>npm run build</code></pre>
 
-4. Run Node:
+4. Run Server:
 <pre><code>npm start</code></pre>
 
 ###Created By:
