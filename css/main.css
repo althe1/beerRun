@@ -3,14 +3,6 @@ canvas {
   margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
-  canvas {
-    margin: 0 auto;
-    width: 100vw !important;
-    height: 100vh !important;
-  }
-}
-
 body {
   background-color: #2b2b2b;
   font-family: 'helvetica', sans-serif;
