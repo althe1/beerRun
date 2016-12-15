@@ -13,7 +13,7 @@
 <pre><code>npm run build</code></pre>
 
 4. Run Node:
-<pre><code>node server.js</code></pre>
+<pre><code>npm start</code></pre>
 
 ###Created By:
 
