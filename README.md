@@ -1,17 +1,18 @@
-+ [https://beer-run.herokuapp.com/](https://beer-run.herokuapp.com/)
-
-
 <img src="assets/banner.png">
 
 ##How to play Beer Run locally
 
 ####In your terminal run the following commands
 1. Clone Repository
+<pre><code>git clone git@github.com:althe1/beerRun.git</code></pre>
 
 2. Npm Install:
 <pre><code>npm install</code></pre>
 
-3. Run Node:
+3. Npm Build:
+<pre><code>npm run build</code></pre>
+
+4. Run Node:
 <pre><code>node server.js</code></pre>
 
 ###Created By:
