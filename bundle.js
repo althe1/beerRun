@@ -3,6 +3,7 @@
 
 //global variables
 window.onload = function () {
+  // var game = new Phaser.Game(Phaser.AUTO, 'beer-run');
   var game = new Phaser.Game(1200, 600, Phaser.AUTO, 'beer-run');
   
   // Game States
@@ -328,11 +329,11 @@ Boot.prototype = {
     this.load.image('preloader', 'assets/preloader.gif');
   },
   create: function() {
+    // this.game.state.start('preload');
+    this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+    // this.scale.setScreenSize(true);
     this.game.input.maxPointers = 1;
     this.game.state.start('preload');
-    // this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    // this.scale.setScreenSize(true);
-    // this.game.state.start("Preload");
   }
 };
 
