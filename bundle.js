@@ -330,6 +330,9 @@ Boot.prototype = {
   create: function() {
     this.game.input.maxPointers = 1;
     this.game.state.start('preload');
+    // this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    // this.scale.setScreenSize(true);
+    // this.game.state.start("Preload");
   }
 };
 
