@@ -47,7 +47,7 @@ Play.prototype = {
 
     //score
     localStorage.setItem('score', '0');
-    console.log(localStorage.getItem('score'));
+    // console.log(localStorage.getItem('score'));
 
     this.scoreText = this.game.add.text(15, 15, 'Score: 0', {fontSize: '32px', fill: '#000'});
 
@@ -130,7 +130,7 @@ Play.prototype = {
       };
 
       if(this.lives.children[0] === undefined) {
-        console.log("All lives gone");
+        // console.log("All lives gone");
         this.gameOver();
         var deadDude = this.player.animations.play('dead', 15, false, true);
         deadDude.play();
