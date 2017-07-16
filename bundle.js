@@ -332,7 +332,7 @@ Boot.prototype = {
     // this.game.state.start('preload');
     this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
     // this.scale.setScreenSize(true);
-    this.game.input.maxPointers = 1;
+    this.game.input.maxPointers = 1; 
     this.game.state.start('preload');
   }
 };
@@ -355,7 +355,7 @@ GameOver.prototype = {
     this.congratsText = this.game.add.text(this.game.world.centerX, 200, 'You Win!', { font: '32px Arial', fill: '#ffffff', align: 'center'});
     this.congratsText.anchor.setTo(0.5, 0.5);
 
-    this.instructionText = this.game.add.text(this.game.world.centerX, 300, 'Click To Play Again', { font: '16px Arial', fill: '#ffffff', align: 'center'});
+    this.instructionText = this.game.add.text(this.game.world.centerX, 300, 'Click To Play Again', { font: '8px Arial', fill: '#ffffff', align: 'center'});
     this.instructionText.anchor.setTo(0.5, 0.5);
   },
   update: function () {
@@ -376,7 +376,7 @@ Menu.prototype = {
   },
   create: function() {
     //adds the background image
-    this.background = this.game.add.tileSprite(0, -35, 653, 352, 'background');
+    this.background = this.game.add.tileSprite(0, 0, this.game.world.width, this.game.world.height, 'background');
     this.background.scale.setTo(2, 2);
 
     //adds a ground image
@@ -433,7 +433,7 @@ Play.prototype = {
     this.game.physics.arcade.gravity.y = 750;
 
     //background
-    this.background = this.game.add.tileSprite(0, -35, 653, 352, 'background');
+    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'background');
     this.background.autoScroll(-100, 0);
     this.background.scale.setTo(2, 2);
 
@@ -458,7 +458,7 @@ Play.prototype = {
 
     //score
     localStorage.setItem('score', '0');
-    console.log(localStorage.getItem('score'));
+    // console.log(localStorage.getItem('score'));
 
     this.scoreText = this.game.add.text(15, 15, 'Score: 0', {fontSize: '32px', fill: '#000'});
 
@@ -541,7 +541,7 @@ Play.prototype = {
       };
 
       if(this.lives.children[0] === undefined) {
-        console.log("All lives gone");
+        // console.log("All lives gone");
         this.gameOver();
         var deadDude = this.player.animations.play('dead', 15, false, true);
         deadDude.play();
@@ -599,7 +599,7 @@ Play.prototype = {
     var randomY = this.game.rnd.integerInRange(450, 520);
     var randGround = this.groundGroup.getFirstExists(false);
       if(!randGround) {
-        randGround = new Ground(this.game, 1200, randomY);
+        randGround = new Ground(this.game, this.game.width, randomY);
         randGround.scale.setTo(1.5, 10);
         this.groundGroup.add(randGround);
       };
@@ -608,32 +608,32 @@ Play.prototype = {
   //generate cops 
   generateCops: function(){
     // console.log('beer');
-    var cop = new Cop(this.game, 1200, 400);
+    var cop = new Cop(this.game, this.game.width - 2, 400);
     this.cops.add(cop);
   },
 
   //generate bunnies 
   generateBunnies: function(){
     // console.log('beer');
-    var bunny = new Bunny(this.game, 1200, 420);
+    var bunny = new Bunny(this.game, this.game.width - 3, 420);
     this.bunnies.add(bunny);
   },
 
   //generate beers 
   generateBeers: function(){
-    var beer = new Beer(this.game, 1199, 300);
+    var beer = new Beer(this.game, this.game.width - 3, 300);
     this.beers.add(beer);
   },
 
   //generates kegs
   generateKegs: function(){
-    var keg = new Keg(this.game, 1199, 300);
+    var keg = new Keg(this.game, this.game.width - 3, 300);
     this.kegs.add(keg);
   },
 
   //generates whiskeys
   generateWhiskeys: function(){
-    var whiskey = new Whiskey(this.game, 1199, 300);
+    var whiskey = new Whiskey(this.game, this.game.width - 3, 300);
     this.whiskeys.add(whiskey);
   },
 

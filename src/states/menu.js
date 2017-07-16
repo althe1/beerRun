@@ -7,7 +7,7 @@ Menu.prototype = {
   },
   create: function() {
     //adds the background image
-    this.background = this.game.add.tileSprite(0, -35, 653, 352, 'background');
+    this.background = this.game.add.tileSprite(0, 0, this.game.world.width, this.game.world.height, 'background');
     this.background.scale.setTo(2, 2);
 
     //adds a ground image
