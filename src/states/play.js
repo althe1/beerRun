@@ -63,7 +63,7 @@ Play.prototype = {
     //game controls
     this.jumpKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     this.shift = this.game.input.keyboard.addKey(Phaser.Keyboard.SHIFT = 16);
-    this.touch = this.game.input.pointer1.isDown;
+    this.touch = this.game.input.pointer1;
     // this.touch = this.game.input.pointer1;
 
     // Tells phaser to fire doubleJump() ONCE per onDown event
@@ -106,7 +106,7 @@ Play.prototype = {
       //player speed
       this.player.body.velocity.x = 400;
 
-      if (this.touch.isDown && this.player.body.touching.down && this.player.alive || this.jumpKey.isDown && this.player.body.touching.down && this.player.alive)
+      if ((this.touch.isDown && this.player.body.touching.down && this.player.alive) || this.jumpKey.isDown && this.player.body.touching.down && this.player.alive)
       {
         this.doubleJump();
       }
