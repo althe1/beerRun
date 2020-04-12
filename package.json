@@ -19,9 +19,10 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
-    "clean-css": "^3.4.9",
+    "clean-css": "^4.2.3",
     "express": "^4.14.0",
     "htmlprocessor": "^0.2.3",
+    "lodash": "^4.17.15",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "nodemon": "^1.11.0",

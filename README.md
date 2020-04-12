@@ -1,21 +1,25 @@
 <img src="assets/banner.png">
 
-##How to play Beer Run locally
+## How to play Beer Run locally
 
-####In your terminal run the following commands
+#### In your terminal run the following commands
+
 1. Clone Repository
-<pre><code>git clone git@github.com:althe1/beerRun.git</code></pre>
+
+   <pre><code>git clone git@github.com:althe1/beerRun.git</code></pre>
 
 2. Npm Install:
-<pre><code>npm install</code></pre>
+
+   <pre><code>npm install</code></pre>
 
 3. Npm Build:
-<pre><code>npm run build</code></pre>
+
+   <pre><code>npm run build</code></pre>
 
 4. Run Server:
-<pre><code>npm start</code></pre>
+   <pre><code>npm start</code></pre>
 
-###Created By:
+### Created By:
 
-+ [Mariano Echegoyen](https://github.com/Mariano89)
-+ [Alfred Kirakosian](https://github.com/althe1)
+- [Mariano Echegoyen](https://github.com/Mariano89)
+- [Alfred Kirakosian](https://github.com/althe1)
