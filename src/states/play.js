@@ -38,7 +38,7 @@ Play.prototype = {
     //creates the first ledge when the player lands
     this.initial_ground = new Ground(
       this.game,
-      0,
+      200,
       this.game.world.height - 64,
       300,
       150
@@ -124,7 +124,7 @@ Play.prototype = {
     //if game is not paused enable player animation and update movement
     if (!paused) {
       //player speed
-      this.player.body.velocity.x = 400;
+      this.player.body.velocity.x = 460;
 
       if (
         (this.touch.isDown &&
@@ -235,8 +235,8 @@ Play.prototype = {
   //generates grounds with random y-value(height)
   generateGrounds: function () {
     // console.log(this.game.world.height - 64);
-    var randomY = this.game.integerInRange(450, 520);
-    var randGround = this.groundGroup.getFirstExists(true);
+    var randomY = this.game.rnd.integerInRange(450, 520);
+    var randGround = this.groundGroup.getFirstExists(false);
     if (!randGround) {
       randGround = new Ground(this.game, this.game.width, randomY);
       randGround.scale.setTo(1.5, 10);
@@ -247,7 +247,7 @@ Play.prototype = {
   //generate cops
   generateCops: function () {
     // console.log('beer');
-    var cop = new Cop(this.game, this.game.width - 2, 400);
+    var cop = new Cop(this.game, this.game.width - 2, 460);
     this.cops.add(cop);
   },
 
@@ -405,11 +405,11 @@ Play.prototype = {
 
       //start animations
       this.background.autoScroll(-100, 0);
-      this.initial_ground.body.velocity.x = -400;
+      this.initial_ground.body.velocity.x = -460;
       this.groundGroup.forEach(function (randGround) {
-        randGround.body.velocity.x = -400;
+        randGround.body.velocity.x = -465;
       }, this);
-      this.player.body.velocity.x = -400;
+      this.player.body.velocity.x = -465;
       this.player.animations.currentAnim.resume = true;
       this.player.body.allowGravity = true;
 
