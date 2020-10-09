@@ -78,11 +78,12 @@ Play.prototype = {
     //game controls
     this.jumpKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     this.shift = this.game.input.keyboard.addKey((Phaser.Keyboard.SHIFT = 16));
-    this.touch = this.game.input.pointer1;
     // this.touch = this.game.input.pointer1;
+    this.touch = this.game.input.onTap;
 
     // Tells phaser to fire doubleJump() ONCE per onDown event
     this.jumpKey.onDown.add(this.doubleJump, this);
+    this.touch.add(this.doubleJump, this);
 
     // this.pauseKey = this.game.input.keyboard.addKey(32);
 
